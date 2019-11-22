@@ -5,6 +5,9 @@ import Chat from "./Chat"
 import CreateChannel from "./CreateChannel"
 import Channels from "./Channels"
 import Dashboard from "./Dashboard"
+import Other from "./MenuOptions/Other"
+import Categories from "./MenuOptions/Categories"
+import Users from "./MenuOptions/Users"
 export default props => {
   const { username, signout } = useAuth()
 
@@ -18,7 +21,10 @@ export default props => {
         <Route exact path={"/Channels/"} component={Channels} />
         <Route exact path={"/CreateChannel"} component={CreateChannel} />
         <Route exact path={"/Chat/:id"} component={Chat} />
-        <Route path={"/"} component={Dashboard} />
+        <Route exact path={"/"} component={Dashboard} />
+        <Route exact path={"/Users"} component={Users} />
+        <Route exact path={"/Categories"} component={Categories} />
+        <Route exact path={"/Other"} component={Other} />
       </Switch>
     </Router>
   )

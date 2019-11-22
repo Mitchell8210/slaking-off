@@ -12,19 +12,24 @@ export default props => {
   }
 
   return (
-    <div>
-      <h1>CREATE CHANNEL, BABY</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="channelName">New Channel Name</label>
-        <input
-          name="channelName"
-          type="text"
-          placeholder="channel name"
-          onChange={e => setChannelName(e.target.value)}
-        />
-        <button type="submit">Submit</button>
-      </form>
-      <Link to={"/"}>Main Menu</Link>
+    <div className="createChannelContainer">
+      <div className="createChannelCover">
+        <h1>CREATE CHANNEL, BABY</h1>
+        <form className="createChannelForm" onSubmit={handleSubmit}>
+          <label htmlFor="channelName">New Channel Name</label>
+          <input
+            name="channelName"
+            required
+            type="text"
+            placeholder="Channel Name"
+            onChange={e => setChannelName(e.target.value)}
+          />
+          <button type="submit">Submit</button>
+        </form>
+        <div className="mainMenuLink">
+          <Link to={"/"}>Main Menu</Link>
+        </div>
+      </div>
     </div>
   )
 }

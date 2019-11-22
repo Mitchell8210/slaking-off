@@ -37,21 +37,26 @@ code {
   margin: auto;
   margin-bottom: 10%;
   margin-top: 10%;
-  background: #333;
+  background: rgb(29, 29, 29);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .loginScreen form {
-  background: #666;
+  background: rgb(34, 34, 34);
   height: 300px;
   width: 100%;
   display: flex;
   flex-direction: column;
 }
+.loginTitle {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+}
 .loginScreen input {
   height: 13%;
-  width: 50%;
+  width: 80%;
   margin: auto;
   font-size: 30px;
   color: white;
@@ -60,9 +65,9 @@ code {
   border: 1px solid black;
 }
 .loginScreen button {
-  width: 80%;
+  width: 70%;
   margin: auto;
-  height: 10%;
+  height: 12%;
   cursor: pointer;
   color: white;
   background: #333;
@@ -73,11 +78,141 @@ code {
   text-align: center;
   font-size: 25px;
   color: white;
-  padding: 10px;
+  padding: 20px;
+}
+.registerLink div {
+  margin-bottom: 10px;
 }
 .registerLink a {
   color: white;
   text-align: center;
   font-size: 25px;
   cursor: pointer;
+}
+
+/* DASHBOARD */
+
+.mainScreenContainer {
+  background: url("../city.jpg");
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background-size: cover;
+}
+.mainScreenCover {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background-size: cover;
+}
+.mainScreenCover h1 {
+  color: white;
+}
+.mainScreenLinksContainer {
+  font-size: 30px;
+  color: White;
+  display: flex;
+  flex-direction: column;
+}
+.mainScreenLinksContainer a {
+  color: white;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+.mainMenu {
+  font-size: 40px;
+  border-bottom: 1px solid black;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  margin-bottom: 15px;
+}
+.logoutButton {
+  height: 40px;
+  width: 150px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 20px;
+}
+
+/* Create Channel Page*/
+.createChannelContainer {
+  background: url("../city.jpg");
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background-size: cover;
+}
+.createChannelCover {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background-size: cover;
+}
+.createChannelCover form {
+  width: 30%;
+  margin: auto;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  background: rgb(24, 24, 24);
+  padding: 10px;
+}
+.createChannelForm input {
+  height: 50px;
+  width: 80%;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}
+.createChannelForm label {
+  font-size: 30px;
+  color: white;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.createChannelForm button {
+  height: 50px;
+  width: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 25px;
+  margin: auto;
+}
+.mainMenuLink {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.mainMenuLink a {
+  color: white;
+  font-size: 30px;
+}
+
+/*Channel Names Page*/
+.channelNames {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+}
+.channelNames a {
+  color: white;
 }

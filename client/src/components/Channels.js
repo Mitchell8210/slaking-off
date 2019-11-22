@@ -6,12 +6,20 @@ export default props => {
   const { channels } = useChannels()
 
   return (
-    <div>
-      <h1>CHANNELS, BABY</h1>
-      {channels.map(channel => (
-        <div key={channel.id}>{channel.channel_name}</div>
-      ))}
-      <Link to={"/"}>Main Menu</Link>
+    <div className="createChannelContainer">
+      <div className="createChannelCover">
+        <h1>CHANNELS, BABY</h1>
+        {channels.map(channel => (
+          <div className="channelNames">
+            <div key={channel.id}>
+              <Link to={`/${channel.channel_name}/:${channel.id}`}>
+                Category Name:{channel.channel_name}
+              </Link>
+            </div>
+          </div>
+        ))}
+        <Link to={"/"}>Main Menu</Link>
+      </div>
     </div>
   )
 }

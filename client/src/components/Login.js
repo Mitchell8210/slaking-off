@@ -24,6 +24,7 @@ export default props => {
     <div className="loginContainer">
       <div className="loginScreen">
         <form onSubmit={handleSubmit}>
+          <div className="loginTitle">Login</div>
           <input
             type="text"
             placeholder="username"
