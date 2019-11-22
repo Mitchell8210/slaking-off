@@ -20,3 +20,64 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* LOGIN SCREEN*/
+.loginContainer {
+  background: url("../sunset.png");
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background-size: cover;
+}
+.loginScreen {
+  width: 30%;
+  margin: auto;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  background: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.loginScreen form {
+  background: #666;
+  height: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.loginScreen input {
+  height: 13%;
+  width: 50%;
+  margin: auto;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  background: #333;
+  border: 1px solid black;
+}
+.loginScreen button {
+  width: 80%;
+  margin: auto;
+  height: 10%;
+  cursor: pointer;
+  color: white;
+  background: #333;
+  border: 1px solid black;
+  font-size: 20px;
+}
+.registerLink {
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  padding: 10px;
+}
+.registerLink a {
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+}

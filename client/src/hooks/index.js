@@ -1,1 +1,2 @@
-export { useUsers } from "../redux/ducks/users"
+export { useAuth } from "../redux/ducks/users"
+export { useChannels } from "../redux/ducks/chan"
