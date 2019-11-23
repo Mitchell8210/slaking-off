@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { useAuth } from "../hooks"
 import { Link } from "react-router-dom"
-import Register from "./Registration"
 
 export default props => {
   const [username, setUsername] = useState("")

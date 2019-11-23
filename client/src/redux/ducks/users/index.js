@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux"
 import axios from "axios"
-
+import socket from "../../../lib/socket"
 // action statements
 const LOGIN_PENDING = "LOGING_PENDING"
 const LOGIN_SUCCESS = "LOGIN_SUCCESS"
@@ -66,6 +66,7 @@ function login(username, password, dispatch) {
           type: LOGIN_SUCCESS,
           payload: username
         })
+        socket.emit("login", username)
         console.log("success")
         resolve()
       })

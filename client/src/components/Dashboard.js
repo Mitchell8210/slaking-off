@@ -1,12 +1,9 @@
 import React from "react"
 import { useAuth } from "../hooks"
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import Chat from "./Chat"
-import CreateChannel from "./CreateChannel"
-import Channels from "./Channels"
-
+import { Link } from "react-router-dom"
+import "../redux/ducks/chat"
 export default props => {
-  const { username, signout } = useAuth()
+  const { signout } = useAuth()
 
   function handleLogout(e) {
     e.preventDefault()
@@ -23,6 +20,7 @@ export default props => {
           <Link to={"/Users"}>Users</Link>
           <Link to={"/Categories"}>Categories</Link>
           <Link to={"/Other"}>Other</Link>
+          <Link to={"/chatWindow"}>Chat Window</Link>
         </div>
         <button className="logoutButton" onClick={handleLogout}>
           Logout

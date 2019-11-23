@@ -1,6 +1,5 @@
 import React from "react"
-import { useAuth } from "../hooks"
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Chat from "./Chat"
 import CreateChannel from "./CreateChannel"
 import Channels from "./Channels"
@@ -8,13 +7,8 @@ import Dashboard from "./Dashboard"
 import Other from "./MenuOptions/Other"
 import Categories from "./MenuOptions/Categories"
 import Users from "./MenuOptions/Users"
+import ChatWindow from "./chatWindow"
 export default props => {
-  const { username, signout } = useAuth()
-
-  function handleLogout(e) {
-    e.preventDefault()
-    signout()
-  }
   return (
     <Router>
       <Switch>
@@ -25,6 +19,7 @@ export default props => {
         <Route exact path={"/Users"} component={Users} />
         <Route exact path={"/Categories"} component={Categories} />
         <Route exact path={"/Other"} component={Other} />
+        <Route exact path={"/chatWindow"} component={ChatWindow} />
       </Switch>
     </Router>
   )
