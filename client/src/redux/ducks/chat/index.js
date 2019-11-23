@@ -50,8 +50,8 @@ export function useChat() {
 
   return { messages, add, users }
 }
-socket.emit("new message", "This is a new message")
+// socket.emit("new message", "This is a new message")
 
-socket.on("new message", message => {
-  console.log(message)
-})
+// socket.on("new message", message => {
+//   console.log(message)
+// })
