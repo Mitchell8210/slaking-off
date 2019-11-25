@@ -65,6 +65,11 @@ code {
   text-align: center;
   background: #333;
   border: 1px solid black;
+  outline: none;
+  transition: background 0.5s;
+}
+.loginScreen input:hover {
+  background: rgb(0, 0, 0);
 }
 .loginScreen button {
   width: 70%;
@@ -76,6 +81,10 @@ code {
   background: #333;
   border: 1px solid black;
   font-size: 20px;
+  transition: background 0.5s;
+}
+.loginScreen button:hover {
+  background: rgb(0, 0, 0);
 }
 .registerLink {
   text-align: center;
@@ -91,6 +100,13 @@ code {
   text-align: center;
   font-size: 25px;
   cursor: pointer;
+  transition: background 0.5s;
+  transition: color 0.5s;
+  padding: 5px;
+}
+.registerLink a:hover {
+  color: rgb(52, 52, 52);
+  background: rgb(184, 184, 184);
 }
 .securityLabel {
   color: white;
@@ -217,11 +233,17 @@ code {
   color: White;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 .mainScreenLinksContainer a {
   color: white;
   padding: 10px;
   margin-bottom: 15px;
+  width: 30%;
+}
+
+.mainScreenLinksContainer a:hover {
+  color: rgba(196, 196, 196, 0.399);
 }
 .mainMenu {
   font-size: 40px;
@@ -230,12 +252,17 @@ code {
   padding: 5px;
   margin-bottom: 15px;
 }
-.logoutButton {
+.mainScreenLinksContainer button {
   height: 40px;
   width: 150px;
   background: rgba(0, 0, 0, 0.8);
   color: white;
   font-size: 20px;
+  cursor: pointer;
+}
+.mainScreenLinksContainer button:hover {
+  background: rgb(#ccc);
+  color: rgb(#12af34);
 }
 
 /* Create Channel Page*/

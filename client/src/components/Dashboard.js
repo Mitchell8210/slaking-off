@@ -18,21 +18,24 @@ export default props => {
   return (
     <div className="mainScreenContainer">
       <div className="mainScreenCover">
-        <div className="mainScreenLinksContainer">
-          <div className="mainMenu">Main Menu</div>
-          <Link to={"/CreateChannel"}>Create Channel</Link>
-          <Link to={"/Channels"}>Available channels</Link>
-          <Link to={"/Users"}>Users</Link>
-          <Link to={"/Categories"}>Categories</Link>
-          <Link to={"/Other"}>Other</Link>
-          <Link to={"/chatWindow"}>Chat Window</Link>
-          <div onClick={handleClick}>
-            <Link to={"/Profile"}>Profile</Link>
+        <div className="dashboard">
+          <div className="mainScreenLinksContainer">
+            <div className="mainMenu">Main Menu</div>
+            <Link to={"/CreateChannel"}>Create Channel</Link>
+            <Link to={"/Channels"}>Available channels</Link>
+            <Link to={"/Users"}>Users</Link>
+            <Link to={"/Categories"}>Categories</Link>
+            <Link to={"/Other"}>Other</Link>
+            <Link to={"/chatWindow"}>Chat Window</Link>
+            <div onClick={handleClick}>
+              <Link to={"/Profile"}>Profile</Link>
+            </div>
+            <button onClick={handleLogout}>Logout</button>
+          </div>
+          <div className="dashboardNews">
+            <div></div>
           </div>
         </div>
-        <button className="logoutButton" onClick={handleLogout}>
-          Logout
-        </button>
       </div>
     </div>
   )
