@@ -75,6 +75,7 @@ function login(username, password, dispatch) {
       })
       .catch(e => {
         dispatch({ type: LOGIN_FAILURE })
+        alert("incorrect username or password")
         reject()
         console.log("nope")
       })
@@ -86,15 +87,26 @@ function logout() {
   return { type: LOGOUT }
 }
 
-function updatePassword(password, answer) {
-  return dispatch => {
-    axios.post("/updatePassword", { password, answer }).then(resp => {
-      dispatch({
-        type: RESET_PASSWORD
+function updatePassword(username, password, answer, dispatch) {
+  return new Promise((resolve, reject) => {
+    axios
+      .post("/updatePassword", { username, password, answer })
+      .then(resp => {
+        dispatch({
+          type: RESET_PASSWORD
+        })
+        resolve()
+        console.log(resp.data[0].message)
+        alert(resp.message)
       })
-      dispatch(login())
-    })
-  }
+      .catch(e => {
+        dispatch({ type: LOGIN_FAILURE })
+        alert(
+          "could not change password, please check that the username and security answer is correct"
+        )
+        reject()
+      })
+  })
 }
 
 // custom hook fucntions
@@ -116,6 +128,8 @@ export function useAuth() {
   const register = (username, password, securityAnswer) => {
     return registerUser(username, password, securityAnswer, dispatch)
   }
-  const reset = (password, answer) => dispatch(updatePassword(password, answer))
+  const reset = (username, password, answer) => {
+    return updatePassword(username, password, answer, dispatch)
+  }
   return { signin, signout, isAuthenticated, username, register, reset }
 }

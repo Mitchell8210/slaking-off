@@ -17,7 +17,7 @@ export default props => {
 
   return (
     <div className="loginContainer">
-      <div className="loginScreen">
+      <div className="RegisterScreen">
         <form onSubmit={handleSubmit}>
           <div className="loginTitle">Register</div>
           <input
@@ -32,7 +32,7 @@ export default props => {
             required
             onChange={e => setPassword(e.target.value)}
           />
-          <label htmlFor="securityQuestion">
+          <label className="securityLabel" htmlFor="securityQuestion">
             Security Question: what is your favorite color?
           </label>
           <input

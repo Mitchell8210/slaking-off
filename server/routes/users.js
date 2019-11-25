@@ -71,17 +71,28 @@ router.post("/login", (req, res, next) => {
 // UPDATE PASSWORD ROUTER
 router.post("/updatePassword", (req, res, next) => {
   const salt = uuid()
+  const username = req.body.username
   const password = sha512(req.body.password + salt)
-  const securityAnswer = req.body.securityAnswer
+  const securityAnswer = req.body.answer
   const sql = `
-  UPDATE users set password = ?, salt = ?
-  WHERE security_answer = ?
+  UPDATE users set password = '${password}',
+  salt = "${salt}"
+  where security_answer = "${securityAnswer}" AND username = "${username}"
   `
-  db.query(sql, [password, salt, securityAnswer], (err, results, fields) => {
-    console.log("updated password")
-    res.json({
-      message: "updated password"
-    })
+  db.query(sql, (err, results, fields) => {
+    if (results.changedRows > 0) {
+      console.log("updated password")
+      res.json({
+        message: "updated password"
+      })
+    } else {
+      res.json({
+        message:
+          "password not updated, please check that the username and security answer are valid"
+      })
+    }
+
+    console.log(results)
   })
 })
 
