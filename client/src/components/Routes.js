@@ -4,11 +4,12 @@ import Chat from "./Chat"
 import CreateChannel from "./CreateChannel"
 import Channels from "./Channels"
 import Dashboard from "./Dashboard"
-import Other from "./MenuOptions/Other"
+import Profile from "./MenuOptions/Profile"
 import Categories from "./MenuOptions/Categories"
 import Users from "./MenuOptions/Users"
 import ChatWindow from "./chatWindow"
 import ChannelChat from "./ChannelChat"
+import EditProfile from "./EditProfile"
 export default props => {
   return (
     <Router>
@@ -24,7 +25,8 @@ export default props => {
         <Route exact path={"/"} component={Dashboard} />
         <Route exact path={"/Users"} component={Users} />
         <Route exact path={"/Categories"} component={Categories} />
-        <Route exact path={"/Other"} component={Other} />
+        <Route exact path={"/Profile"} component={Profile} />
+        f<Route exact path={"/editProfile"} component={EditProfile} />
         <Route exact path={"/chatWindow"} component={ChatWindow} />
       </Switch>
     </Router>

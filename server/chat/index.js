@@ -1,6 +1,5 @@
 module.exports = io => {
   let users = []
-
   io.on("connection", socket => {
     socket.on("login", username => {
       users.push({

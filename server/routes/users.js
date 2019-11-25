@@ -123,4 +123,43 @@ router.get("/channels", (req, res, next) => {
     res.json(results)
   })
 })
+
+// update the profile info of a user
+
+router.post("/updateProfile", (req, res, next) => {
+  const email = req.body.email
+  const location = req.body.location
+  const about = req.body.about
+  const username = req.body.username
+  const sql = `
+  UPDATE users 
+set 
+email = ?,
+location = ?,
+about = ?
+WHERE username = ?
+
+  `
+
+  db.query(sql, [email, location, about, username], (err, results, fields) => {
+    console.log("updated profile")
+    res.json(results)
+  })
+})
+
+// get the profile info of a user
+
+router.get("/profile", (req, res, next) => {
+  const username = req.body.username
+  const sql = `
+  SELECT username, email, location, about
+  FROM users
+  WHERE username = "mitchell"
+  `
+  db.query(sql, (err, results, fields) => {
+    res.json(results)
+    console.log(results)
+    console.log("got profile info")
+  })
+})
 module.exports = router
