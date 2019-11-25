@@ -4,9 +4,11 @@ import socket from "../../../lib/socket"
 
 const ADD_MESSAGE = "ADD_MESSAGE"
 const GET_USERS = "GET_USERS"
+const JOIN_ROOM = "JOIN_ROOM"
 const initialState = {
   messages: [],
-  users: []
+  users: [],
+  room: []
 }
 
 export default (state = initialState, action) => {
@@ -15,6 +17,8 @@ export default (state = initialState, action) => {
       return { ...state, messages: [...state.messages, action.payload] }
     case GET_USERS:
       return { ...state, users: action.payload }
+    case JOIN_ROOM:
+      return { ...state, room: action.payload }
     default:
       return state
   }
@@ -33,12 +37,20 @@ function getUsers(users) {
     payload: users
   }
 }
-
+function joinRoom(room) {
+  console.log(room)
+  return {
+    type: JOIN_ROOM,
+    payload: room
+  }
+}
 export function useChat() {
   const dispatch = useDispatch()
   const messages = useSelector(appState => appState.chatState.messages)
   const add = message => socket.emit("message", message)
   const users = useSelector(appState => appState.chatState.users)
+  const room = useSelector(appState => appState.chatState.room)
+  const join = newRoom => socket.emit("create", newRoom)
   useEffect(() => {
     socket.on("message", message => {
       dispatch(addMessage(message))
@@ -46,9 +58,12 @@ export function useChat() {
     socket.on("users", users => {
       dispatch(getUsers(users))
     })
+    socket.on("create", room => {
+      dispatch(joinRoom(room))
+    })
   }, [dispatch])
 
-  return { messages, add, users }
+  return { messages, add, users, room, join }
 }
 // socket.emit("new message", "This is a new message")
 

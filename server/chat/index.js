@@ -20,7 +20,12 @@ module.exports = io => {
 
       console.log("Tearing down")
     })
+    socket.on("create", function(room) {
+      socket.join(room)
+      console.log("joined ", room)
+    })
   })
 }
+
 // io is the server
 //socket is the individual client

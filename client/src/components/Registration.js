@@ -5,11 +5,12 @@ export default props => {
   const { register } = useAuth()
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const [securityQuestion, setSecurityQuestion] = useState("")
 
   function handleSubmit(e) {
     e.preventDefault()
 
-    register(username, password).then(resp => {
+    register(username, password, securityQuestion).then(resp => {
       props.history.push("/")
     })
   }
@@ -30,6 +31,16 @@ export default props => {
             placeholder="password"
             required
             onChange={e => setPassword(e.target.value)}
+          />
+          <label htmlFor="securityQuestion">
+            Security Question: what is your favorite color?
+          </label>
+          <input
+            type="text"
+            name="securityQuestion"
+            placeholder="Security Answer"
+            required
+            onChange={e => setSecurityQuestion(e.target.value)}
           />
           <button type="submit">Register</button>
         </form>

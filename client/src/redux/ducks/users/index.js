@@ -7,6 +7,7 @@ const LOGIN_SUCCESS = "LOGIN_SUCCESS"
 const LOGIN_FAILURE = "LOGIN_FAILURE"
 const LOGOUT = "LOGOUT"
 const REGISTER_USER = "REGISTER_USER"
+const RESET_PASSWORD = "RESET_PASSWORD"
 // initial states
 const initialState = {
   username: "",
@@ -32,16 +33,18 @@ export default (state = initialState, action) => {
       return initialState
     case REGISTER_USER:
       return initialState
+    case RESET_PASSWORD:
+      return initialState
     default:
       return state
   }
 }
 
 // Action functions
-function registerUser(username, password, dispatch) {
+function registerUser(username, password, securityAnswer, dispatch) {
   return new Promise((resolve, reject) => {
     axios
-      .post("/register", { username, password })
+      .post("/register", { username, password, securityAnswer })
       .then(resp => {
         dispatch({
           type: REGISTER_USER
@@ -83,6 +86,17 @@ function logout() {
   return { type: LOGOUT }
 }
 
+function updatePassword(password, answer) {
+  return dispatch => {
+    axios.post("/updatePassword", { password, answer }).then(resp => {
+      dispatch({
+        type: RESET_PASSWORD
+      })
+      dispatch(login())
+    })
+  }
+}
+
 // custom hook fucntions
 // register, login, logout hook
 export function useAuth() {
@@ -99,8 +113,9 @@ export function useAuth() {
   }
   const signout = () => dispatch(logout())
 
-  const register = (username, password) => {
-    return registerUser(username, password, dispatch)
+  const register = (username, password, securityAnswer) => {
+    return registerUser(username, password, securityAnswer, dispatch)
   }
-  return { signin, signout, isAuthenticated, username, register }
+  const reset = (password, answer) => dispatch(updatePassword(password, answer))
+  return { signin, signout, isAuthenticated, username, register, reset }
 }

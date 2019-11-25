@@ -20,13 +20,15 @@ export default (state = initialState, action) => {
   }
 }
 
-function NewChannel(channelName) {
+function NewChannel(channelName, creatorName, description) {
   return dispatch => {
-    axios.post("/newchannel", { channelName }).then(resp => {
-      dispatch({
-        type: CREATE_CHANNEL
+    axios
+      .post("/newchannel", { channelName, creatorName, description })
+      .then(resp => {
+        dispatch({
+          type: CREATE_CHANNEL
+        })
       })
-    })
   }
 }
 
@@ -45,7 +47,8 @@ function getChannels() {
 export function useChannels() {
   const dispatch = useDispatch()
   const channels = useSelector(appState => appState.chanState.channels)
-  const createChannel = channelName => dispatch(NewChannel(channelName))
+  const createChannel = (channelName, creatorName, description) =>
+    dispatch(NewChannel(channelName, creatorName, description))
 
   useEffect(() => {
     dispatch(getChannels())

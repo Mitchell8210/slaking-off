@@ -10,21 +10,26 @@ router.post("/register", (req, res, next) => {
   const salt = uuid()
   const username = req.body.username
   const password = sha512(req.body.password + salt)
+  const securityAnswer = req.body.securityAnswer
   console.log(password)
 
   const sql = `
-  INSERT INTO users (username, password, salt) VALUES(?, ?, ?)`
+  INSERT INTO users (username, password, salt, security_answer) VALUES(?, ?, ?, ?)`
 
-  db.query(sql, [username, password, salt], (err, results, fields) => {
-    if (err) {
-      throw new Error(err)
+  db.query(
+    sql,
+    [username, password, salt, securityAnswer],
+    (err, results, fields) => {
+      if (err) {
+        throw new Error(err)
+      }
+
+      res.json({
+        message: "user created",
+        results
+      })
     }
-
-    res.json({
-      message: "user created",
-      results
-    })
-  })
+  )
 })
 // login Route
 router.post("/login", (req, res, next) => {
@@ -63,13 +68,32 @@ router.post("/login", (req, res, next) => {
   )
 })
 
+// UPDATE PASSWORD ROUTER
+router.post("/updatePassword", (req, res, next) => {
+  const salt = uuid()
+  const password = sha512(req.body.password + salt)
+  const securityAnswer = req.body.securityAnswer
+  const sql = `
+  UPDATE users set password = ?, salt = ?
+  WHERE security_answer = ?
+  `
+  db.query(sql, [password, salt, securityAnswer], (err, results, fields) => {
+    console.log("updated password")
+    res.json({
+      message: "updated password"
+    })
+  })
+})
+
 //create new channel Route
 router.post("/newchannel", (req, res, next) => {
   const channel = req.body.channelName
+  const creator = req.body.creatorName
+  const description = req.body.description
   const sql = `
-  INSERT INTO channels (channel_name) VALUES(?)
+  INSERT INTO channels (channel_name, creator_name, description ) VALUES(?,?,?)
   `
-  db.query(sql, [channel], (err, results, fields) => {
+  db.query(sql, [channel, creator, description], (err, results, fields) => {
     console.log("created new channel")
     res.json({
       message: "channel created"

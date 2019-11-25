@@ -8,11 +8,17 @@ import Other from "./MenuOptions/Other"
 import Categories from "./MenuOptions/Categories"
 import Users from "./MenuOptions/Users"
 import ChatWindow from "./chatWindow"
+import ChannelChat from "./ChannelChat"
 export default props => {
   return (
     <Router>
       <Switch>
         <Route exact path={"/Channels/"} component={Channels} />
+        <Route
+          exact
+          path={`/ChannelChat/:channel_name/:id`}
+          component={ChannelChat}
+        />
         <Route exact path={"/CreateChannel"} component={CreateChannel} />
         <Route exact path={"/Chat/:id"} component={Chat} />
         <Route exact path={"/"} component={Dashboard} />

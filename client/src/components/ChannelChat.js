@@ -1,13 +1,13 @@
 import React, { useState } from "react"
-import { useChat, useAuth, useChannels } from "../hooks"
+import { useChat } from "../redux/ducks/chat"
+import { useAuth } from "../redux/ducks/users"
 import Timestamp from "react-timestamp"
-import { Link } from "react-router-dom"
 export default props => {
-  console.log(props)
-  const channels = useChannels()
   const [message, setMessage] = useState("")
   const { username } = useAuth()
   const { messages, add } = useChat()
+  const channel = props.match.params.channel_name
+  console.log(props)
   function handleSubmit(e) {
     e.preventDefault()
 
@@ -25,9 +25,6 @@ export default props => {
     <div className="chatWindowContainer">
       <div className="chatBoxCover">
         <div className="onlineUsers">
-          <div className="mainMenuLin">
-            <Link to={"/"}>Main Menu</Link>
-          </div>
           <div className="userListTitle">Online Users</div>
           <div className="userList">{username}</div>
         </div>
@@ -60,7 +57,7 @@ export default props => {
         <div className="chatBoxChannels">
           <div className="chatChannelList">
             <div className="userListTitle">Channels</div>
-            <div></div>
+            <div>{channel}</div>
           </div>
         </div>
       </div>
