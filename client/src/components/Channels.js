@@ -20,7 +20,7 @@ export default props => {
         <div>
           {channels.map((channel, i) => (
             <div key={"channel" + i} className="channelNames">
-              <div onClick={e => handleClick(e, channel.id)}>
+              <div onClick={e => handleClick(e, channel.channel_name)}>
                 <Link to={`ChannelChat/${channel.channel_name}/${channel.id}`}>
                   Channel Name: {channel.channel_name}
                 </Link>

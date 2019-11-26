@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { useAuth, useUserInfo } from "../../hooks"
+import { useUserInfo } from "../../hooks"
 export default props => {
   const { userInfo } = useUserInfo()
   console.log(userInfo)

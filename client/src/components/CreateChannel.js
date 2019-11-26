@@ -3,7 +3,6 @@ import { useChannels, useAuth } from "../hooks"
 import { Link } from "react-router-dom"
 export default props => {
   const [channelName, setChannelName] = useState("")
-  const [creator, setCreator] = useState("")
   const [description, setDescription] = useState("")
   const { createChannel } = useChannels()
   const { username } = useAuth()
@@ -33,9 +32,8 @@ export default props => {
             type="text"
             placeholder="Creator Name"
             value={username}
-            onChange={e => setCreator(e.target.value)}
           />
-          <label htmlFor="description">New Channel Name</label>
+          <label htmlFor="description">Description</label>
           <input
             name="description"
             required

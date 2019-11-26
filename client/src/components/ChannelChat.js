@@ -6,33 +6,43 @@ import { Link } from "react-router-dom"
 export default props => {
   const [message, setMessage] = useState("")
   const { username } = useAuth()
-  const { messages, add, leave } = useChat()
+  const { messages, add, leave, users } = useChat()
   const channel = props.match.params.channel_name
-  console.log(props)
   function handleSubmit(e) {
     e.preventDefault()
 
-    add({ message, username })
+    add({ message, username, channel })
     setMessage("")
-  }
-  function handleDelete(e) {
-    e.preventDefault()
-    messages.splice(message)
   }
   function handleClick(e, channel) {
     e.preventDefault()
 
     leave(channel)
   }
-  console.log(messages)
+  console.log("front end messages", messages)
   const time = new Date()
-  console.log(messages)
+
+  // const seen = new Set()
+  // const filteredArr1 = messages.filter(el => {
+  //   const duplicate = seen.has(el.id)
+  //   seen.add(el.id)
+  //   return !duplicate
+  // })
+  // const channelMessages = messages.filter(msg => msg.channel !== channel)
   return (
     <div className="chatWindowContainer">
       <div className="chatBoxCover">
         <div className="onlineUsers">
           <div className="userListTitle">Online Users</div>
-          <div className="userList">{username}</div>
+          <div>
+            {users.map((user, i) => {
+              return (
+                <div key={"user" + i} className="userList">
+                  {user.username}
+                </div>
+              )
+            })}
+          </div>
         </div>
         <div className="chatBox">
           <h1>CHAT, BABY!</h1>
@@ -49,7 +59,6 @@ export default props => {
                 <p className="timeStamp">
                   <Timestamp>{time}</Timestamp>
                 </p>
-                <button onClick={handleDelete}>x</button>
               </div>
             ))}
           </div>

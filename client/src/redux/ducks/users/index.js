@@ -10,7 +10,7 @@ const REGISTER_USER = "REGISTER_USER"
 const RESET_PASSWORD = "RESET_PASSWORD"
 // initial states
 const initialState = {
-  username: "",
+  username: [],
   isAuthenticated: false,
   loading: false
 }
@@ -82,7 +82,8 @@ function login(username, password, dispatch) {
   })
 }
 
-function logout() {
+function logout(message) {
+  socket.off("message", message)
   axios.defaults.headers.common = { Authorization: "" }
   return { type: LOGOUT }
 }
@@ -123,7 +124,7 @@ export function useAuth() {
     })
     return login(username, password, dispatch)
   }
-  const signout = () => dispatch(logout())
+  const signout = message => dispatch(logout(message))
 
   const register = (username, password, securityAnswer) => {
     return registerUser(username, password, securityAnswer, dispatch)

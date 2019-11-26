@@ -1,30 +1,43 @@
 module.exports = io => {
   let users = []
   let rooms = []
+  const seen = new Set()
+  const filteredArr1 = rooms.filter(el => {
+    const duplicate = seen.has(el.id)
+    seen.add(el.id)
+    return !duplicate
+  })
   io.on("connection", socket => {
     socket.on("login", username => {
       users.push({
         username,
         id: socket.id
       })
-
       io.emit("users", users)
     })
     socket.on("create", function(room) {
       rooms.push({
-        room,
-        id: socket.id
+        room
       })
       socket.join(room)
       console.log("joined", room)
-      socket.on("message", message => {
-        io.in(room).emit("message", message)
-        console.log(message, room)
-      })
-      socket.on("leave", room => {
-        socket.leave(room)
-        console.log("left room: ", room)
-      })
+      console.log("rooms, bitch", rooms)
+    })
+    socket.on("message", message => {
+      io.to(message.channel).emit("new message", message)
+      console.log(
+        "these messages",
+        message,
+        "these rooms:",
+        rooms,
+        "users:",
+        users
+      )
+    })
+
+    socket.on("leave", room => {
+      socket.leave(room)
+      console.log("left room: ", room)
     })
 
     socket.on("disconnect", () => {

@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from "react"
-import socket from "../../../lib/socket"
 import Axios from "axios"
 
 const ADD_USER_INFO = "ADD_USER_INFO"

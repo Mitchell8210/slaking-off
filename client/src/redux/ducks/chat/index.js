@@ -23,7 +23,11 @@ export default (state = initialState, action) => {
       return state
   }
 }
-
+// socket.on("new message", message => {
+//   return dispatch => {
+//     dispatch(addMessage(message))
+//   }
+// })
 function addMessage(message) {
   return {
     type: ADD_MESSAGE,
@@ -37,13 +41,14 @@ function getUsers(users) {
     payload: users
   }
 }
-function joinRoom(room) {
-  console.log(room)
-  return {
-    type: JOIN_ROOM,
-    payload: room
-  }
-}
+// function joinRoom(room) {
+//   console.log(room)
+//   return {
+//     type: JOIN_ROOM,
+//     payload: room
+//   }
+// }
+
 export function useChat() {
   const dispatch = useDispatch()
   const messages = useSelector(appState => appState.chatState.messages)
@@ -53,14 +58,14 @@ export function useChat() {
   const join = newRoom => socket.emit("create", newRoom)
   const leave = oldRoom => socket.emit("leave", oldRoom)
   useEffect(() => {
-    socket.on("message", message => {
-      dispatch(addMessage(message))
-    })
     socket.on("users", users => {
       dispatch(getUsers(users))
     })
-    socket.emit("create", room => {
-      dispatch(joinRoom(room))
+    // socket.emit("create", room => {
+    //   dispatch(joinRoom(room))
+    // })
+    socket.on("new message", message => {
+      dispatch(addMessage(message))
     })
   }, [dispatch])
 
