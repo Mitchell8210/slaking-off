@@ -1,12 +1,6 @@
 module.exports = io => {
   let users = []
   let rooms = []
-  const seen = new Set()
-  const filteredArr1 = rooms.filter(el => {
-    const duplicate = seen.has(el.id)
-    seen.add(el.id)
-    return !duplicate
-  })
   io.on("connection", socket => {
     socket.on("login", username => {
       users.push({

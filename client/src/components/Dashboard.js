@@ -27,7 +27,6 @@ export default props => {
             <Link to={"/Users"}>Users</Link>
             <Link to={"/Categories"}>Categories</Link>
             <Link to={"/Other"}>Other</Link>
-            <Link to={"/chatWindow"}>Chat Window</Link>
             <div onClick={handleClick}>
               <Link to={"/Profile"}>Profile</Link>
             </div>
