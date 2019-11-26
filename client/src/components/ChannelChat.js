@@ -2,10 +2,11 @@ import React, { useState } from "react"
 import { useChat } from "../redux/ducks/chat"
 import { useAuth } from "../redux/ducks/users"
 import Timestamp from "react-timestamp"
+import { Link } from "react-router-dom"
 export default props => {
   const [message, setMessage] = useState("")
   const { username } = useAuth()
-  const { messages, add } = useChat()
+  const { messages, add, leave } = useChat()
   const channel = props.match.params.channel_name
   console.log(props)
   function handleSubmit(e) {
@@ -17,6 +18,11 @@ export default props => {
   function handleDelete(e) {
     e.preventDefault()
     messages.splice(message)
+  }
+  function handleClick(e, channel) {
+    e.preventDefault()
+
+    leave(channel)
   }
   console.log(messages)
   const time = new Date()
@@ -30,6 +36,9 @@ export default props => {
         </div>
         <div className="chatBox">
           <h1>CHAT, BABY!</h1>
+          <div onClick={e => handleClick(e, channel)}>
+            <Link to={"/"}>Other Channels</Link>
+          </div>
           <div className="messageContainer">
             {messages.map((msg, i) => (
               <div key={"message" + i} className="chatMessages">

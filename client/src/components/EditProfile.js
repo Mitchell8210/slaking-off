@@ -1,17 +1,18 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { useUserInfo, useAuth } from "../hooks"
+
 export default props => {
   const { makeProfile } = useUserInfo()
   const { username } = useAuth()
   const [email, setEmail] = useState("")
   const [location, setLocation] = useState("")
   const [about, setAbout] = useState("")
-
+  const [url, setURL] = useState("")
   function handleSubmit(e) {
     e.preventDefault()
 
-    makeProfile(email, location, about, username)
+    makeProfile(email, location, about, url, username)
   }
 
   return (
@@ -38,11 +39,20 @@ export default props => {
               <label htmlFor="about">About</label>
               <textarea
                 name="about"
-                placeholder="a little aobut yourself"
+                placeholder="a little about yourself"
                 onChange={e => setAbout(e.target.value)}
+              />
+              <label htmlFor="picture">Image URL</label>
+              <input
+                type="url"
+                name="picture"
+                onChange={e => setURL(e.target.value)}
               />
               <button type="submit">Update Profile</button>
             </form>
+            <div className="backToProfile">
+              <Link to={"/"}>Main Menu</Link>
+            </div>
           </div>
         </div>
       </div>

@@ -42,7 +42,7 @@ export default props => {
             required
             onChange={e => setAnswer(e.target.value)}
           />
-          <button type="submit">Register</button>
+          <button type="submit">Reset Password</button>
         </form>
         <div className="registerLink">
           <Link to={"/login"}>Login</Link>

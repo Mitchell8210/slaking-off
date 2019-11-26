@@ -131,32 +131,39 @@ router.post("/updateProfile", (req, res, next) => {
   const location = req.body.location
   const about = req.body.about
   const username = req.body.username
+  const url = req.body.url
   const sql = `
   UPDATE users 
 set 
 email = ?,
 location = ?,
-about = ?
+about = ?,
+url = ?
 WHERE username = ?
 
   `
 
-  db.query(sql, [email, location, about, username], (err, results, fields) => {
-    console.log("updated profile")
-    res.json(results)
-  })
+  db.query(
+    sql,
+    [email, location, about, url, username],
+    (err, results, fields) => {
+      console.log("updated profile")
+      res.json(results)
+    }
+  )
 })
 
 // get the profile info of a user
 
-router.get("/profile", (req, res, next) => {
-  const username = req.body.username
+router.get("/profile/:username", (req, res, next) => {
+  const username = req.params.username
+  console.log(username)
   const sql = `
-  SELECT username, email, location, about
+  SELECT username, email, location, about, url
   FROM users
-  WHERE username = "mitchell"
+  WHERE username =?
   `
-  db.query(sql, (err, results, fields) => {
+  db.query(sql, [username], (err, results, fields) => {
     res.json(results)
     console.log(results)
     console.log("got profile info")

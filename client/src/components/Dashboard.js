@@ -15,6 +15,7 @@ export default props => {
 
     getProfile(username)
   }
+  console.log(username)
   return (
     <div className="mainScreenContainer">
       <div className="mainScreenCover">
@@ -30,10 +31,9 @@ export default props => {
             <div onClick={handleClick}>
               <Link to={"/Profile"}>Profile</Link>
             </div>
-            <button onClick={handleLogout}>Logout</button>
-          </div>
-          <div className="dashboardNews">
-            <div></div>
+            <div className="mainButton">
+              <button onClick={handleLogout}>Logout</button>
+            </div>
           </div>
         </div>
       </div>

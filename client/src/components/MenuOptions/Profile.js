@@ -8,16 +8,15 @@ export default props => {
   return (
     <div className="mainScreenContainer">
       <div className="mainScreenCover">
-        <h1>Profile, baby!</h1>
         <div className="profileContainer">
           <div className="profilePic">
-            <img src="" alt="user face" />
+            <img src={`${userInfo.url}`} alt="user face" />
           </div>
           <div className="profileInfo">
-            <div>Username: {userInfo.username}</div>
-            <div>Email: {userInfo.email}</div>
-            <div>Location: {userInfo.location}</div>
-            <div>About me: {userInfo.about}</div>
+            <div className="username">Username: {userInfo.username}</div>
+            <div className="email">Email: {userInfo.email}</div>
+            <div className="location">Location: {userInfo.location}</div>
+            <div className="about">About me: {userInfo.about}</div>
           </div>
           <Link to={"/editProfile"}>Edit Profile</Link>
           <div className=""></div>

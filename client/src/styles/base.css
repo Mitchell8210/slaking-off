@@ -23,7 +23,8 @@ code {
 
 /* LOGIN SCREEN*/
 .loginContainer {
-  background: url("../sunset.png");
+  /* background: url("../sunset.png"); */
+  background: #192e5b;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -37,13 +38,13 @@ code {
   margin: auto;
   /* margin-bottom: 10%; */
   margin-top: 10%;
-  background: rgba(0, 0, 0, 0.5);
+  background: #1d65a6;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .loginScreen form {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   height: 210px;
   width: 100%;
   display: flex;
@@ -98,15 +99,14 @@ code {
 .registerLink a {
   color: white;
   text-align: center;
-  font-size: 25px;
+  font-size: 22px;
   cursor: pointer;
   transition: background 0.5s;
-  transition: color 0.5s;
+
   padding: 5px;
 }
 .registerLink a:hover {
-  color: rgb(52, 52, 52);
-  background: rgb(184, 184, 184);
+  background: rgb(21, 47, 63);
 }
 .securityLabel {
   color: white;
@@ -124,7 +124,7 @@ code {
   margin: auto;
   /* margin-bottom: 10%; */
   margin-top: 10%;
-  background: rgba(0, 0, 0, 0.5);
+  background: #1d65a6;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -132,7 +132,7 @@ code {
 .RegisterScreen form {
   display: flex;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   padding-bottom: 20px;
 }
 .RegisterScreen input {
@@ -167,7 +167,7 @@ code {
   margin: auto;
   /* margin-bottom: 10%; */
   margin-top: 10%;
-  background: rgba(0, 0, 0, 0.5);
+  background: #1d65a6;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -175,7 +175,7 @@ code {
 .ResetScreen form {
   display: flex;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   padding-bottom: 20px;
 }
 .ResetScreen input {
@@ -205,7 +205,7 @@ code {
 /* DASHBOARD */
 
 .mainScreenContainer {
-  background: url("../city.jpg");
+  background: #2e303e;
   background-size: cover;
   position: fixed;
   top: 0;
@@ -214,9 +214,9 @@ code {
   right: 0;
   margin: 0;
   background-size: cover;
+  overflow: scroll;
 }
 .mainScreenCover {
-  background: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -233,12 +233,11 @@ code {
   color: White;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 .mainScreenLinksContainer a {
   color: white;
   padding: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 1%;
   width: 30%;
 }
 
@@ -250,24 +249,29 @@ code {
   border-bottom: 1px solid black;
   background: rgba(0, 0, 0, 0.8);
   padding: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 3%;
 }
-.mainScreenLinksContainer button {
+
+.mainButton button {
   height: 40px;
   width: 150px;
   background: rgba(0, 0, 0, 0.8);
   color: white;
   font-size: 20px;
   cursor: pointer;
+  margin-top: 15px;
 }
-.mainScreenLinksContainer button:hover {
-  background: rgb(#ccc);
-  color: rgb(#12af34);
+.mainButton button:hover {
+  background: rgba(14, 26, 99, 0.399);
 }
-
+.dashboard {
+  height: 100%;
+  overflow: scroll;
+  padding-bottom: 3%;
+}
 /* Create Channel Page*/
 .createChannelContainer {
-  background: url("../city.jpg");
+  background: #2e303e;
   background-size: cover;
   position: fixed;
   top: 0;
@@ -278,7 +282,6 @@ code {
   background-size: cover;
 }
 .createChannelCover {
-  background: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -331,19 +334,39 @@ code {
 }
 
 /*Channel Names Page*/
+.channelListContainer {
+  background: #2e303e;
+  height: 100%;
+}
+.channelListCover h1 {
+  margin-top: 0;
+  color: white;
+}
 .channelNames {
-  font-size: 30px;
+  font-size: 25px;
   margin-bottom: 20px;
   margin-left: 15px;
+  width: 40%;
+}
+.channelNames:hover {
+  background: rgba(0, 0, 0, 0.5);
 }
 .channelNames a {
   color: white;
+}
+.channelListCover a {
+  color: white;
+  font-size: 25px;
+}
+.channelListLink {
+  margin-left: 15px;
+  margin-bottom: 30px;
 }
 
 /* Chat Window Display*/
 
 .chatWindowContainer {
-  background: url("../city.jpg");
+  background: #2e303e;
   background-size: cover;
   position: fixed;
   top: 0;
@@ -354,7 +377,6 @@ code {
   background-size: cover;
 }
 .chatBoxCover {
-  background: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -369,16 +391,26 @@ code {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: rgba(53, 53, 53, 0.399);
+  background: #6c6b74;
   padding: 10px;
   position: relative;
+}
+.messageContainerContainer {
+  height: 90%;
+  /* overflow-x: hidden;
+  overflow-y: auto;
+  transform: rotate(180deg);
+  direction: rtl;
+  text-align: left; */
 }
 .messageContainer {
   background: rgba(0, 0, 0, 0.349);
   overflow: scroll;
   margin-bottom: 40px;
-  height: 90%;
+  height: 100%;
   width: 100%;
+  /* direction: ltr;
+  transform: rotate(180deg); */
 }
 .chatMessages {
   width: 100%;
@@ -428,7 +460,12 @@ code {
   width: 20%;
   height: 100%;
   border-right: 1px solid black;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 5px;
+}
+.mainMenuLin a {
+  color: white;
+  font-size: 22px;
 }
 .userListTitle {
   border-bottom: 1px solid white;
@@ -436,9 +473,23 @@ code {
   color: white;
 }
 .userList {
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid rgb(118, 118, 118);
   color: white;
   font-size: 25px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  transition: background 0.5s;
+}
+.userList:hover {
+  background: rgb(96, 96, 96);
+}
+.userlistDot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: rgb(0, 216, 0);
+  margin-right: 5px;
 }
 
 /* Chat Window Sidebar-Right */
@@ -446,7 +497,7 @@ code {
   width: 20%;
   height: 100%;
   border-right: 1px solid black;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2);
 }
 .chatChannelList {
 }
@@ -460,15 +511,53 @@ code {
 /* Profile page */
 
 .profileContainer {
-  width: 80%;
+  width: 40%;
   margin: auto;
-  background: rgba(0, 0, 0, 0.349);
+  background: rgba(0, 0, 0, 0.3);
   color: white;
+  padding: 10px;
+  margin-top: 5%;
 }
-
+.profileContainer a {
+  color: white;
+  font-size: 20px;
+  padding-left: 15px;
+}
+.profilePic img {
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgb(145, 145, 145);
+}
+.profilePic {
+  width: 200px;
+  margin: auto;
+  padding-top: 50px;
+}
+.profileInfo div {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.email {
+  margin-top: 50px;
+}
+.email,
+.location,
+.about {
+  padding-left: 15px;
+  border-bottom: 1px solid rgb(87, 87, 87);
+}
+.username {
+  text-align: center;
+  width: 200px;
+  border-bottom: 2px solid rgb(145, 145, 145);
+  margin: auto;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 0;
+}
 /* Edit Profile Page */
 .editProfileContainer {
-  background: url("../city.jpg");
+  background: #2e303e;
   background-size: cover;
   position: fixed;
   top: 0;
@@ -483,7 +572,6 @@ code {
   margin-bottom: 0;
 }
 .editProfileCover {
-  background: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -499,17 +587,20 @@ code {
   display: flex;
   flex-direction: column;
   height: 500px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(11, 16, 70, 0.5);
   padding: 10px;
 }
 .editProfileCover input {
   height: 50px;
   width: 80%;
   margin: auto;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(20, 25, 67, 0.434);
   color: white;
   font-size: 25px;
   text-align: center;
+}
+.editProfileCover input:hover {
+  background: rgba(0, 0, 0, 0.406);
 }
 .editProfileCover label {
   font-size: 30px;
@@ -521,16 +612,38 @@ code {
   height: 100px;
   width: 80%;
   margin: auto;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.2);
   color: white;
   font-size: 25px;
   text-align: center;
 }
+.editProfileCover textarea:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
 .editProfileCover button {
   height: 50px;
   width: 50%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(20, 25, 67, 0.434);
   color: white;
   font-size: 25px;
   margin: auto;
+}
+.editProfileCover button:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.backToProfile {
+  text-align: center;
+  height: 40px;
+  width: 145px;
+  padding: 5px;
+  margin: auto;
+  margin-top: 15px;
+  transition: background 0.5s;
+}
+.backToProfile:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.backToProfile a {
+  color: white;
+  font-size: 22px;
 }

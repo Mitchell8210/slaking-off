@@ -101,9 +101,9 @@ function updatePassword(username, password, answer, dispatch) {
       })
       .catch(e => {
         dispatch({ type: LOGIN_FAILURE })
-        alert(
-          "could not change password, please check that the username and security answer is correct"
-        )
+        // alert(
+        //   "could not change password, please check that the username and security answer is correct"
+        // )
         reject()
       })
   })

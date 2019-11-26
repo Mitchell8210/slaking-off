@@ -25,27 +25,32 @@ export default props => {
     <div className="chatWindowContainer">
       <div className="chatBoxCover">
         <div className="onlineUsers">
+          <div className="userListTitle">Online Users</div>
+          <div className="userList">
+            <div className="userlistDot"></div>
+            {username}
+          </div>
+        </div>
+        <div className="chatBox">
           <div className="mainMenuLin">
             <Link to={"/"}>Main Menu</Link>
           </div>
-          <div className="userListTitle">Online Users</div>
-          <div className="userList">{username}</div>
-        </div>
-        <div className="chatBox">
           <h1>CHAT, BABY!</h1>
-          <div className="messageContainer">
-            {messages.map((msg, i) => (
-              <div key={"message" + i} className="chatMessages">
-                <div className="messageBase">
-                  <p className="messenger">{msg.username}:</p>
-                  <p className="messageContent">{msg.message}</p>
+          <div className="messageContainerContainer">
+            <div className="messageContainer">
+              {messages.map((msg, i) => (
+                <div key={"message" + i} className="chatMessages">
+                  <div className="messageBase">
+                    <p className="messenger">{msg.username}:</p>
+                    <p className="messageContent">{msg.message}</p>
+                  </div>
+                  <p className="timeStamp">
+                    <Timestamp>{time}</Timestamp>
+                  </p>
+                  <button onClick={handleDelete}>x</button>
                 </div>
-                <p className="timeStamp">
-                  <Timestamp>{time}</Timestamp>
-                </p>
-                <button onClick={handleDelete}>x</button>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
           <form onSubmit={handleSubmit}>
             <input

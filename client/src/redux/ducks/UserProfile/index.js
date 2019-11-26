@@ -21,31 +21,38 @@ export default (state = initialState, action) => {
   }
 }
 
-function addInfo(email, location, about, username) {
+function addInfo(email, location, about, url, username) {
   return dispatch => {
-    Axios.post("/updateProfile", { email, location, about, username }).then(
-      resp => {
-        dispatch({
-          type: ADD_USER_INFO,
-          payload: resp.data
-        })
-      }
-    )
+    Axios.post("/updateProfile", {
+      email,
+      location,
+      about,
+      url,
+      username
+    }).then(resp => {
+      dispatch({
+        type: ADD_USER_INFO,
+        payload: resp.data
+      })
+      alert("profile updated")
+    })
   }
 }
 
 function getUserInfo(username) {
   return dispatch => {
-    Axios.get("/profile", { username }).then(resp => {
-      const userInfo = {
+    Axios.get(`/profile/${username}`).then(resp => {
+      console.log(resp.data)
+      const userInformation = {
         username: resp.data[0].username,
         email: resp.data[0].email,
         location: resp.data[0].location,
-        about: resp.data[0].about
+        about: resp.data[0].about,
+        url: resp.data[0].url
       }
       dispatch({
         type: GET_USER_INFO,
-        payload: userInfo
+        payload: userInformation
       })
     })
   }
@@ -54,12 +61,10 @@ function getUserInfo(username) {
 export function useUserInfo() {
   const dispatch = useDispatch()
   const userInfo = useSelector(appstate => appstate.infoState.userInfo)
-  const makeProfile = (email, location, about, username) =>
-    dispatch(addInfo(email, location, about, username))
+  const makeProfile = (email, location, about, url, username) =>
+    dispatch(addInfo(email, location, about, url, username))
   const getProfile = username => dispatch(getUserInfo(username))
-  useEffect(() => {
-    dispatch(getUserInfo())
-  }, [dispatch])
+  useEffect(() => {}, [dispatch])
 
   return { userInfo, makeProfile, getProfile }
 }

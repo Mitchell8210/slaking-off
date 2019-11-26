@@ -51,6 +51,7 @@ export function useChat() {
   const users = useSelector(appState => appState.chatState.users)
   const room = useSelector(appState => appState.chatState.room)
   const join = newRoom => socket.emit("create", newRoom)
+  const leave = oldRoom => socket.emit("leave", oldRoom)
   useEffect(() => {
     socket.on("message", message => {
       dispatch(addMessage(message))
@@ -58,12 +59,12 @@ export function useChat() {
     socket.on("users", users => {
       dispatch(getUsers(users))
     })
-    socket.on("create", room => {
+    socket.emit("create", room => {
       dispatch(joinRoom(room))
     })
   }, [dispatch])
 
-  return { messages, add, users, room, join }
+  return { messages, add, users, room, join, leave }
 }
 // socket.emit("new message", "This is a new message")
 
