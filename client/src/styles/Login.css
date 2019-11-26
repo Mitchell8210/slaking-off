@@ -1,0 +1,181 @@
+/* LOGIN SCREEN*/
+.loginContainer {
+  /* background: url("../sunset.png"); */
+  background: #192e5b;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background-size: cover;
+}
+.loginScreen {
+  width: 30%;
+  margin: auto;
+  /* margin-bottom: 10%; */
+  margin-top: 10%;
+  background: #1d65a6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.loginScreen form {
+  background: rgba(0, 0, 0, 0.8);
+  height: 210px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.loginTitle {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+}
+.loginScreen input {
+  height: 20%;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  background: #333;
+  border: 1px solid black;
+  outline: none;
+  transition: background 0.5s;
+}
+.loginScreen input:hover {
+  background: rgb(0, 0, 0);
+}
+.loginScreen button {
+  width: 70%;
+  margin: auto;
+  margin-top: 20px;
+  height: 20%;
+  cursor: pointer;
+  color: white;
+  background: #333;
+  border: 1px solid black;
+  font-size: 20px;
+  transition: background 0.5s;
+}
+.loginScreen button:hover {
+  background: rgb(0, 0, 0);
+}
+.registerLink {
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  padding: 20px;
+}
+.registerLink div {
+  margin-bottom: 10px;
+}
+.registerLink a {
+  color: white;
+  text-align: center;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background 0.5s;
+
+  padding: 5px;
+}
+.registerLink a:hover {
+  background: rgb(21, 47, 63);
+}
+.securityLabel {
+  color: white;
+  text-align: center;
+  margin-top: 25px;
+}
+.forgotLink {
+  margin-top: 25px;
+}
+
+/* Register screen*/
+
+.RegisterScreen {
+  width: 30%;
+  margin: auto;
+  /* margin-bottom: 10%; */
+  margin-top: 10%;
+  background: #1d65a6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.RegisterScreen form {
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.8);
+  padding-bottom: 20px;
+}
+.RegisterScreen input {
+  height: 20%;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  background: #333;
+  border: 1px solid black;
+}
+
+.RegisterScreen button {
+  width: 70%;
+  margin: auto;
+  margin-top: 20px;
+  height: 40px;
+  cursor: pointer;
+  color: white;
+  background: #333;
+  border: 1px solid black;
+  font-size: 20px;
+}
+
+/* Reset screen*/
+
+.ResetScreen {
+  width: 30%;
+  margin: auto;
+  /* margin-bottom: 10%; */
+  margin-top: 10%;
+  background: #1d65a6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ResetScreen form {
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.8);
+  padding-bottom: 20px;
+}
+.ResetScreen input {
+  height: 20%;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  background: #333;
+  border: 1px solid black;
+}
+
+.ResetScreen button {
+  width: 70%;
+  margin: auto;
+  margin-top: 20px;
+  height: 40px;
+  cursor: pointer;
+  color: white;
+  background: #333;
+  border: 1px solid black;
+  font-size: 20px;
+}

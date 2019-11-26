@@ -1,0 +1,139 @@
+/* Profile page */
+
+.profileContainer {
+  width: 40%;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 10px;
+  margin-top: 5%;
+}
+.profileContainer a {
+  color: white;
+  font-size: 20px;
+  padding-left: 15px;
+}
+.profilePic img {
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgb(145, 145, 145);
+}
+.profilePic {
+  width: 200px;
+  margin: auto;
+  padding-top: 50px;
+}
+.profileInfo div {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.email {
+  margin-top: 50px;
+}
+.email,
+.location,
+.about {
+  padding-left: 15px;
+  border-bottom: 1px solid rgb(87, 87, 87);
+}
+.username {
+  text-align: center;
+  width: 200px;
+  border-bottom: 2px solid rgb(145, 145, 145);
+  margin: auto;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 0;
+}
+/* Edit Profile Page */
+.editProfileContainer {
+  background: #2e303e;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background-size: cover;
+}
+.editProfileCover h1 {
+  text-align: center;
+  margin-bottom: 0;
+}
+.editProfileCover {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background-size: cover;
+}
+.editProfileCover form {
+  width: 30%;
+  margin: auto;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  background: rgba(11, 16, 70, 0.5);
+  padding: 10px;
+}
+.editProfileCover input {
+  height: 50px;
+  width: 80%;
+  margin: auto;
+  background: rgba(20, 25, 67, 0.434);
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}
+.editProfileCover input:hover {
+  background: rgba(0, 0, 0, 0.406);
+}
+.editProfileCover label {
+  font-size: 30px;
+  color: white;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.editProfileCover textarea {
+  height: 100px;
+  width: 80%;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}
+.editProfileCover textarea:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.editProfileCover button {
+  height: 50px;
+  width: 50%;
+  background: rgba(20, 25, 67, 0.434);
+  color: white;
+  font-size: 25px;
+  margin: auto;
+}
+.editProfileCover button:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.backToProfile {
+  text-align: center;
+  height: 40px;
+  width: 145px;
+  padding: 5px;
+  margin: auto;
+  margin-top: 15px;
+  transition: background 0.5s;
+}
+.backToProfile:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.backToProfile a {
+  color: white;
+  font-size: 22px;
+}

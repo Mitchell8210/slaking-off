@@ -1,0 +1,67 @@
+/* DASHBOARD */
+
+.mainScreenContainer {
+  background: #2e303e;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background-size: cover;
+  overflow: scroll;
+}
+.mainScreenCover {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background-size: cover;
+}
+.mainScreenCover h1 {
+  color: white;
+}
+.mainScreenLinksContainer {
+  font-size: 30px;
+  color: White;
+  display: flex;
+  flex-direction: column;
+}
+.mainScreenLinksContainer a {
+  color: white;
+  padding: 10px;
+  margin-bottom: 1%;
+  width: 30%;
+}
+
+.mainScreenLinksContainer a:hover {
+  color: rgba(196, 196, 196, 0.399);
+}
+.mainMenu {
+  font-size: 40px;
+  border-bottom: 1px solid black;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  margin-bottom: 3%;
+}
+
+.mainButton button {
+  height: 40px;
+  width: 150px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.mainButton button:hover {
+  background: rgba(14, 26, 99, 0.399);
+}
+.dashboard {
+  height: 100%;
+  overflow: scroll;
+  padding-bottom: 3%;
+}

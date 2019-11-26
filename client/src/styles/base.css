@@ -21,9 +21,9 @@ code {
     monospace;
 }
 
-/* LOGIN SCREEN*/
+/* LOGIN SCREEN
 .loginContainer {
-  /* background: url("../sunset.png"); */
+  background: url("../sunset.png"); 
   background: #192e5b;
   position: absolute;
   top: 0;
@@ -36,7 +36,7 @@ code {
 .loginScreen {
   width: 30%;
   margin: auto;
-  /* margin-bottom: 10%; */
+  margin-bottom: 10%; 
   margin-top: 10%;
   background: #1d65a6;
   display: flex;
@@ -116,13 +116,13 @@ code {
 .forgotLink {
   margin-top: 25px;
 }
-
+*/
 /* Register screen*/
-
+/*
 .RegisterScreen {
   width: 30%;
   margin: auto;
-  /* margin-bottom: 10%; */
+  /* margin-bottom: 10%; 
   margin-top: 10%;
   background: #1d65a6;
   display: flex;
@@ -160,12 +160,12 @@ code {
   font-size: 20px;
 }
 
-/* Reset screen*/
+/* Reset screen
 
 .ResetScreen {
   width: 30%;
   margin: auto;
-  /* margin-bottom: 10%; */
+  /* margin-bottom: 10%; 
   margin-top: 10%;
   background: #1d65a6;
   display: flex;
@@ -202,8 +202,9 @@ code {
   border: 1px solid black;
   font-size: 20px;
 }
+*/
 /* DASHBOARD */
-
+/* 
 .mainScreenContainer {
   background: #2e303e;
   background-size: cover;
@@ -268,9 +269,9 @@ code {
   height: 100%;
   overflow: scroll;
   padding-bottom: 3%;
-}
+} */
 /* Create Channel Page*/
-.createChannelContainer {
+/* .createChannelContainer {
   background: #2e303e;
   background-size: cover;
   position: fixed;
@@ -331,10 +332,10 @@ code {
 .mainMenuLink a {
   color: white;
   font-size: 30px;
-}
+} */
 
 /*Channel Names Page*/
-.channelListContainer {
+/* .channelListContainer {
   background: #2e303e;
   height: 100%;
 }
@@ -361,11 +362,11 @@ code {
 .channelListLink {
   margin-left: 15px;
   margin-bottom: 30px;
-}
+} */
 
 /* Chat Window Display*/
 
-.chatWindowContainer {
+/* .chatWindowContainer {
   background: #2e303e;
   background-size: cover;
   position: fixed;
@@ -397,11 +398,6 @@ code {
 }
 .messageContainerContainer {
   height: 90%;
-  /* overflow-x: hidden;
-  overflow-y: auto;
-  transform: rotate(180deg);
-  direction: rtl;
-  text-align: left; */
 }
 .messageContainer {
   background: rgba(0, 0, 0, 0.349);
@@ -409,8 +405,7 @@ code {
   margin-bottom: 40px;
   height: 100%;
   width: 100%;
-  /* direction: ltr;
-  transform: rotate(180deg); */
+
 }
 .chatMessages {
   width: 100%;
@@ -454,9 +449,9 @@ code {
   width: 10%;
   height: 40px;
   font-size: 22px;
-}
+} */
 /* Chat Window sideBar */
-.onlineUsers {
+/* .onlineUsers {
   width: 20%;
   height: 100%;
   border-right: 1px solid black;
@@ -490,10 +485,10 @@ code {
   border-radius: 50%;
   background: rgb(0, 216, 0);
   margin-right: 5px;
-}
+} */
 
 /* Chat Window Sidebar-Right */
-.chatBoxChannels {
+/* .chatBoxChannels {
   width: 20%;
   height: 100%;
   border-right: 1px solid black;
@@ -506,10 +501,10 @@ code {
   padding-left: 5%;
   font-size: 25px;
   border-bottom: 1px solid black;
-}
+} */
 
 /* Profile page */
-
+/* 
 .profileContainer {
   width: 40%;
   margin: auto;
@@ -554,9 +549,9 @@ code {
   height: 40px;
   line-height: 40px;
   margin-top: 0;
-}
+} */
 /* Edit Profile Page */
-.editProfileContainer {
+/* .editProfileContainer {
   background: #2e303e;
   background-size: cover;
   position: fixed;
@@ -646,4 +641,4 @@ code {
 .backToProfile a {
   color: white;
   font-size: 22px;
-}
+} */
